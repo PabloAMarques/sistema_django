@@ -2,18 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create Proposal</title>
+    <title>Emprestimo Bancario</title>
+    <style>
+        /* Estilos para centralizar o conteúdo */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Estilos para o formulário */
+        form {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Espaço entre o título e o formulário */
+        }
+
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Create Proposal</h1>
+    <h1>Proposta de Emprestimo</h1>
     <form method="post" action="{% url 'create-proposal' %}">
         {% csrf_token %}
-        <label for="document">Document:</label>
+        <label for="document">Documento:</label>
         <input type="text" name="document" required><br>
-        <label for="name">Name:</label>
+        <label for="name">Nome:</label>
         <input type="text" name="name" required><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Enviar">
     </form>
-    <a href="{% url 'create-proposal-page' %}">Create Proposal Page</a> 
 </body>
 </html>
